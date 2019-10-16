@@ -1,6 +1,7 @@
 
 public abstract class NameHolder {
 	protected String firstName;
+	protected String lastName;
 	
 	public abstract String describeSelf();
 	
@@ -20,4 +21,14 @@ public abstract class NameHolder {
 		return new String(firstName);
 	}
 
+	protected void setLastName(String lastName) throws NameException {
+		if (!lastName.isEmpty())
+			this.lastName = lastName;
+		else
+			throw new NameException("wrong");
+	}
+
+	protected  String getLastName() {
+		return new String(lastName);
+	}
 }
